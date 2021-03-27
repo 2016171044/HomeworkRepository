@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+html{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+body{
+    background-color: #f9f3f3;
+}
+div{
+    text-align: center;
+    width: 100%;
+    height: fit-content;
+}
+input {
+    margin: 10px;
+    padding: 10px;
+    border: none;
+}
+p{
+    color: #f25287;
+    font-size: large;
+}
+
+.button{
+    background-color: #dddddd;
+}
