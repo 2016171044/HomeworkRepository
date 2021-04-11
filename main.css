@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+html{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+body{
+    background-color: #f9f3f3;
+}
+div{
+    text-align: center;
+    width: 100%;
+    height: fit-content;
+    border: 1px solid black;
+}
+input {
+    margin: 10px;
+    padding: 10px;
+    border: none;
+}
+p{
+    color: #f25287;
+    font-size: large;
+}
+
+.button{
+    background-color: #dddddd;
+}
+
+#mainframe{
+    border: 1px solid black;
+    width: 1020px;
+    margin: auto;
+}
+
+#slides{
+    margin: 5px;
+    border: 1px solid black;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    animation-name: moveleft;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes moveleft {
+    0% {left: 1020px;}
+    100% {left: 0px;}
+}
+
+#maincontent{
+    width: 1000px;
+    min-height: 600px;
+    margin: 10px;
+}
+
+.contents{
+    margin: 20px;
+    width: 450px;
+    height: 450px;
+    text-align: left;
+}
+
+#leftcontent{
+    float: left;
+}
+
+#rightcontent{
+    float: right;
+}
+
+#introduce{
+    margin: auto;
+    width: 1000px;
+    margin: 10px;
+    column-count: 3;
+    column-gap: 30px;
+    column-width: 300px;
+    column-rule-style:dotted;
+    column-rule-width: 3px;
+}
+
+.buildings{
+    width: 100px;
+    height: 100px;
+    transition: width 2s, height 2s;
+}
+
+.buildings:hover{
+    width: 450px;
+    height: 450px;
+}
