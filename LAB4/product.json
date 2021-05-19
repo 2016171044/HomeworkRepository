@@ -3,72 +3,72 @@
     "device": "Galaxy S9",
     "company": "Samsung",
     "price": "500 won",
-    "image": "./images/galaxys9"
+    "image": "./images/galaxys9.jpg"
   },
   {
     "device": "Galaxy S10",
     "company": "Samsung",
     "price": "600 won",
-    "image": "./images/galaxys10"
+    "image": "./images/galaxys10.jpg"
   },
   {
     "device": "Galaxy A25",
     "company": "Samsung",
     "price": "1200 won",
-    "image": "./images/galaxya25"
+    "image": "./images/galaxya25.png"
   },
   {
     "device": "Galaxy A24",
     "company": "Samsung",
     "price": "1200 won",
-    "image": "./images/galaxya24"
+    "image": "./images/galaxya24.png"
   },
   {
     "device": "Pocophone",
     "company": "Xiaomi",
     "price": "700 won",
-    "image": "./images/pocophone"
+    "image": "./images/pocophone.jpg"
   },
   {
     "device": "Velvet",
     "company": "LG",
     "price": "400 won",
-    "image": "./images/velvet"
+    "image": "./images/velvet.png"
   },
   {
     "device": "Iphone 7",
     "company": "Apple",
     "price": "1000 won",
-    "image": "./images/iphone7"
+    "image": "./images/iphone7.png"
   },
   {
     "device": "Iphone 8",
     "company": "Apple",
     "price": "1000 won",
-    "image": "./images/iphone8"
+    "image": "./images/iphone8.png"
   },
   {
     "device": "Iphone 9",
     "company": "Apple",
     "price": "1000 won",
-    "image": "./images/iphone9"
+    "image": "./images/iphone9.png"
   },
   {
     "device": "Iphone 10",
     "company": "Apple",
     "price": "1000 won",
-    "image": "./images/iphone10"
+    "image": "./images/iphone10.png"
   },
   {
     "device": "Iphone 11",
     "company": "Apple",
     "price": "1000 won",
-    "image": "./images/iphone11"
+    "image": "./images/iphone11.jpg"
   },
   {
     "device": "Iphone 12",
     "company": "Apple",
     "price": "1000 won",
-    "image": "./images/iphone12"
+    "image": "./images/iphone12.png"
   }
 ]
