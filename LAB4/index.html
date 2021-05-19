@@ -50,7 +50,7 @@
                 <button id='btn_search'>검색</button>
             </div>
             <div id="products">
-                <p>제품들이 나열될 자리입니다.v8</p>
+                <p>제품들이 나열될 자리입니다.v9</p>
             </div>
         </div>
     </body>
@@ -73,7 +73,7 @@
                     getWantedProduct = getWantedProduct.filter(getWantedProduct => getWantedProduct.device === document.querySelector('#input_search').value);
                 }
                 if (category.value != All){
-                    getWantedProduct = onproducts.filter(product => product.company === category.value);
+                    getWantedProduct = getWantedProduct.filter(product => product.company === category.value);
                 }
                 refresh(getWantedProduct);
                 console.log(Object.keys(getWantedProduct).length)
