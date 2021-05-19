@@ -65,15 +65,37 @@
             const productCompany = document.createElement('p');
             const productPrice = document.createElement('p');
             const productImage = document.createElement('img');
+            const detailButton = document.createElement('button');
 
             productImage.src = product.image;
             productImage.alt = product.device;
             productImage.setAttribute('width', 250);
             productImage.setAttribute('height', 250);
 
+            productDevice.textContent = product.device;
+            productDevice.setAttribute('style','visibility: hidden');
+
+            productCompany.textContent = product.company;
+            productCompany.setAttribute('style','visibility: hidden');
+
+            productPrice.textContent = product.price;
+            productPrice.setAttribute('style','visibility: hidden');
+
+            detailButton.textContent = '상세 설명'
+            detailButton.addEventListener("click", showDetail);
+
             productDiv.appendChild(productImage);
+            productDiv.appendChild(productDevice);
+            productDiv.appendChild(productCompany);
+            productDiv.appendChild(productPrice);
+            productDiv.appendChild(detailButton);
 
             productDisplay.appendChild(productDiv);
+        }
+        function showDetail(){
+            productDevice.setAttribute('style','visibility: visible');
+            productCompany.setAttribute('style','visibility: visible');
+            productPrice.setAttribute('style','visibility: visible');
         }
     </script>
 </html>
