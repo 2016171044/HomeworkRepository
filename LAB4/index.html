@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <title>Internet Programming</title>
+    </head>
+    <body>
+        <div id="mainframe">
+            <h1>Welcome to Internet Programming Shop</h1>
+            <div id="slides"><h3>This is our website</h3></div>
+            <a href="./index.html">메인페이지</a>
+            <a href="./login.html">로그인</a>
+            <a href="./signup.html">회원가입</a>
+            <div id="maincontent">
+                <h2>그림에 커서를 가져다 대면 커집니다.</h2>
+                <div id="leftcontent" class="contents"><img src="building1.jpg" alt="빌딩 사진 1" class="buildings"></div>
+                <div id="rightcontent" class="contents"><img src="building2.jpg" alt="빌딩 사진 2" class="buildings"></div>
+            </div>
+            <div id="introduce">
+                <p>이 사이트는?</p>
+                <hr>
+                <p>사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 
+                    사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 
+                    사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 
+                    사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 
+                    사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 
+                    사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 
+                    사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 
+                    사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 
+                    사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 
+                    사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 
+                    사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 
+                    사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 
+                    사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 
+                    사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다.
+                    사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 사이트에 대해서 소개합니다. 
+                </p>
+            </div>    
+            <div id="search">
+                <p>aaaaaa</p>
+            </div>
+            <div id="products">
+                <p>aaaaaa</p>
+            </div>
+        </div>
+    </body>
+    <script>
+        fetch('./product.json')
+            .then((response) => {return response.json();})
+            .then((json) => {initialize(json);});
+
+        const productDisplay = document.querySelector('#products');
+
+        function initialize(products){
+            const allproducts = products;
+            onproduct = products.slice(0, 6);
+            for(let i=0; i<6; i++){
+                makeProduct(onproduct[i]);
+            }
+        }
+        function makeProduct(product){
+            const productDiv = document.createElement('div');
+            const productDevice = document.createElement('p');
+            const productCompany = document.createElement('p');
+            const productPrice = document.createElement('p');
+            const productImage = document.createElement('img');
+
+            productImage.src = product.image;
+            productImage.alt = product.device;
+            productImage.setAttribute('width', 250);
+            productImage.setAttribute('height', 250);
+
+            productDiv.appendChild(productImage);
+            
+            productDisplay.appendChild(productDiv);
+        }
+    </script>
+</html>

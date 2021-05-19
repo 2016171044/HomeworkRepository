@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <title>Internet Programming</title>
+    </head>
+    <body>
+        <div>
+        <h1>Welcome to Internet Programming Shop</h1>
+        <a href="./index.html">메인페이지</a>
+        <a href="./login.html">로그인</a>
+        <a href="./signup.html">회원가입</a>
+        <p>개인정보(필수)</p>
+        <p><label>이름: <input type="text" name="UserName" id="" placeholder="이름을 입력하세요" autofocus></label></p>
+        <p><label>생일: <input type="date" name="BirthDate" id=""></label></p>
+        <p><label>학년: <input type="number" name="Grade" id="" min="1" max="4" step="1" value="1"></label></p>
+        <p><label>전화번호: <input type="tel" name="PhoneNum" id="" placeholder="(###)###-####" pattern="\(\d{3}\)+\d{3}-\d{4}"></label></p>
+        <p><label>이메일: <input type="email" name="UserEmail" autocomplete="email" placeholder="이메일을 입력하세요"></label></p>
+        <p><label>유저 아이디: <input type="text" name="UserId" id="" placeholder="아이디를 입력하세요"></label></p>
+        <p><label>비밀번호: <input type="text" name="UserPw" id="" placeholder="비밀번호를 입력하세요"></label></p>
+        <p><label>비밀번호 확인: <input type="text" name="UserPwConfirm" id="" placeholder="한번 더 입력하세요" required></label></p>
+        <input class="button" type="submit" value="회원가입"> <input class="button" type="reset" value="취소">
+        </div>
+    </body>
+</html>
