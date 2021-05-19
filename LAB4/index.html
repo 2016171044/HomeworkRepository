@@ -38,7 +38,7 @@
                 </p>
             </div>    
             <div id="search">
-                <p>검색 창이 들어갈 자리입니다.</p>
+                <p>검색 창이 들어갈 자리입니다.v.15</p>
                 <select name="category" id="category">
                     <option value="All" selected>All</option>
                     <option value="Samsung">Samsung</option>
@@ -46,11 +46,11 @@
                     <option value="Xiaomi">Xiaomi</option>
                     <option value="LG">LG</option>
                 </select>
-                <input type="text" id="input_search" placeholder="핸드폰 이름 입력">
+                <input type="text" id="input_search" placeholder="제조사 이름 입력">
                 <button id='btn_search'>검색</button>
             </div>
             <div id="products">
-                <p>제품들이 나열될 자리입니다.v14</p>
+                <p>제품들이 나열될 자리입니다.</p>
             </div>
         </div>
     </body>
@@ -60,14 +60,12 @@
             .then((json) => {initialize(json);});
 
         const productDisplay = document.querySelector('#products');
-        const category = document.querySelector('#category');
         const btn_search = document.querySelector('#btn_search');
 
-
         function initialize(products){
-            console.log(Object.keys(products).length)
             allproduct = products;
             getWantedProduct = products;
+            productnum = Object.keys(products).length;
 
             btn_search.addEventListener('click',function(){
                 getWantedProduct = allproduct;
@@ -75,15 +73,18 @@
                     getWantedProduct = getWantedProduct.filter(getWantedProduct => getWantedProduct.company === document.querySelector('#category').value);
                 }
                 if (document.querySelector('#input_search').value != ''){
-                    getWantedProduct = getWantedProduct.filter(getWantedProduct => getWantedProduct.device === document.querySelector('#input_search').value);
+                    getWantedProduct = getWantedProduct.filter(getWantedProduct => getWantedProduct.company === document.querySelector('#input_search').value);
                 }
                 productnum = Object.keys(getWantedProduct).length;
-                console.log(productnum);
                 refresh(getWantedProduct, true, productnum);
             })
+            refresh(onproduct,false,productnum);
 
-            onproduct = getWantedProduct.slice(0, 12);
-            refresh(onproduct,false,12);
+            window.addEventListener('scroll',function(){
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight){
+                    refresh(getWantedProduct, false, productnum);
+                }
+            })
         }
 
         function refresh(products, issearch, productnum){
