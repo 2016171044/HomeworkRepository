@@ -50,7 +50,7 @@
                 <button id='btn_search'>검색</button>
             </div>
             <div id="products">
-                <p>제품들이 나열될 자리입니다.v12</p>
+                <p>제품들이 나열될 자리입니다.v13</p>
             </div>
         </div>
     </body>
@@ -75,16 +75,21 @@
                 if (document.querySelector('#input_search').value != ''){
                     getWantedProduct = getWantedProduct.filter(getWantedProduct => getWantedProduct.device === document.querySelector('#input_search').value);
                 }
-                console.log(Object.keys(getWantedProduct).length)
-                refresh(getWantedProduct);
+                productnum = Object.keys(getWantedProduct).length;
+                refresh(getWantedProduct, true, productnum);
             })
 
             onproduct = getWantedProduct.slice(0, 12);
-            refresh(onproduct);
+            refresh(onproduct,false,12);
         }
 
-        function refresh(products){
-            for(let i=0; i<12; i++){
+        function refresh(products, issearch, productnum){
+            if(issearch){
+                while(productDisplay.firstChild){
+                    productDisplay.removeChild(productDisplay.childNodes[0]);
+                }
+            }
+            for(let i=0; i<productnum; i++){
                 makeProduct(products[i]);
             }
         }
