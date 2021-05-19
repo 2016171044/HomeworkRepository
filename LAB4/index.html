@@ -46,9 +46,11 @@
                     <option value="Xiaomi">Xiaomi</option>
                     <option value="LG">LG</option>
                 </select>
+                <input type="text" id="input_search" placeholder="핸드폰 이름 입력">
+                <button id='btn_search'>검색</button>
             </div>
             <div id="products">
-                <p>제품들이 나열될 자리입니다.</p>
+                <p>제품들이 나열될 자리입니다.v4</p>
             </div>
         </div>
     </body>
@@ -58,14 +60,32 @@
             .then((json) => {initialize(json);});
 
         const productDisplay = document.querySelector('#products');
+        const category = document.querySelector('#category');
+        const btn_search = document.querySelector('#btn_search');
+
 
         function initialize(products){
-            const allproducts = products;
-            onproduct = products.slice(0, 12);
+            console.log(Object.keys(products).length)
+
+            category.addEventListener('change',function(){
+                if (category.value != All){
+                    const getWantedProduct = onproducts.filter(product => product.company === category.value);
+                }
+            })
+            btn_search.addEventListener('click',function(){
+                getWantedProduct = getWantedProduct.filter(getWantedProduct => getWantedProduct.device === document.querySelector('#input_search').value)
+            })
+
+            onproduct = getWantedProduct.slice(0, 12);
+            refresh(onproduct);
+        }
+
+        function refresh(products){
             for(let i=0; i<12; i++){
-                makeProduct(onproduct[i]);
+                makeProduct(product[i]);
             }
         }
+
         function makeProduct(product){
             const productDiv = document.createElement('div');
             const productDevice = document.createElement('p');
