@@ -90,12 +90,12 @@ p{
 
 #search{
     margin: 10px;
-    width: 210px;
+    width: 220px;
     float: left;
 }
 
 #products{
-    margin: 20px;
+    margin: 10px;
     width: 700px;
     height: auto;
     float: right;
