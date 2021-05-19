@@ -82,7 +82,11 @@
             productPrice.setAttribute('style','visibility: hidden');
 
             detailButton.textContent = '상세 설명'
-            detailButton.addEventListener("click", showDetail);
+            detailButton.addEventListener("click", function(){
+                productDevice.setAttribute('style','visibility: visible');
+                productCompany.setAttribute('style','visibility: visible');
+                productPrice.setAttribute('style','visibility: visible');
+            });
 
             productDiv.appendChild(productImage);
             productDiv.appendChild(productDevice);
@@ -91,11 +95,6 @@
             productDiv.appendChild(detailButton);
 
             productDisplay.appendChild(productDiv);
-        }
-        function showDetail(){
-            productDevice.setAttribute('style','visibility: visible');
-            productCompany.setAttribute('style','visibility: visible');
-            productPrice.setAttribute('style','visibility: visible');
         }
     </script>
 </html>
