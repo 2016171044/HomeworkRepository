@@ -50,7 +50,7 @@
                 <button id='btn_search'>검색</button>
             </div>
             <div id="products">
-                <p>제품들이 나열될 자리입니다.v4</p>
+                <p>제품들이 나열될 자리입니다.v5</p>
             </div>
         </div>
     </body>
@@ -73,7 +73,9 @@
                 }
             })
             btn_search.addEventListener('click',function(){
-                getWantedProduct = getWantedProduct.filter(getWantedProduct => getWantedProduct.device === document.querySelector('#input_search').value)
+                if (document.querySelector('#input_search').value != ''){
+                    getWantedProduct = getWantedProduct.filter(getWantedProduct => getWantedProduct.device === document.querySelector('#input_search').value)
+                }
             })
 
             onproduct = getWantedProduct.slice(0, 12);
